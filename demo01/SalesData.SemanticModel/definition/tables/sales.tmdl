@@ -26,7 +26,7 @@ table sales
 		formatString: 0
 		lineageTag: e9039206-bc69-416d-9c8a-d1838114b9c0
 		sourceLineageTag: CustomerKey
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: CustomerKey
 
 		annotation SummarizationSetBy = Automatic
