@@ -1,0 +1,48 @@
+table customers
+	lineageTag: 97341b67-c555-44c0-9b2d-fde78e4d0941
+	sourceLineageTag: [dbo].[customers]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ff20f5de-d69b-4137-8c6e-79de694d66af
+		sourceLineageTag: CustomerKey
+		summarizeBy: count
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerName
+		dataType: string
+		lineageTag: 66afdcf1-6a10-4457-a56c-8485c54d8390
+		sourceLineageTag: CustomerName
+		summarizeBy: none
+		sourceColumn: CustomerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 70a7eee5-ba54-4ce1-8e86-11712e6b162d
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 42338202-ce4f-4465-b530-daee69c4f243
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customers = entity
+		mode: directLake
+		source
+			entityName: customers
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Load'
+

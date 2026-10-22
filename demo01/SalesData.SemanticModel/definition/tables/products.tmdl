@@ -1,0 +1,50 @@
+table products
+	lineageTag: c2f2f0e0-9096-4bc8-b92b-cff1d83f93a7
+	sourceLineageTag: [dbo].[products]
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7040238b-687f-4802-8e10-d137ccc78dba
+		sourceLineageTag: ProductKey
+		summarizeBy: count
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: f810db95-395c-4177-9a62-10051bc37ad9
+		sourceLineageTag: ProductName
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 83424048-9c47-4dad-81a4-fff00c9d46a5
+		sourceLineageTag: Category
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitCost
+		dataType: double
+		lineageTag: 32b91f70-c960-4e8c-970c-639cdd42909a
+		sourceLineageTag: UnitCost
+		summarizeBy: sum
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition products = entity
+		mode: directLake
+		source
+			entityName: products
+			schemaName: dbo
+			expressionSource: 'DirectLake - LH_Load'
+
