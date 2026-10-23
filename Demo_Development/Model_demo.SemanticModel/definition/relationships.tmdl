@@ -1,0 +1,4 @@
+relationship 597497c7-5115-ad62-01e9-3c4e7e80c612
+	fromColumn: Trip.DateID
+	toColumn: Date.DateID
+
